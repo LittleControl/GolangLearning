@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	// "math/cmplx"
-	"math"
+	// "math"
 )
 
 func add(x , y int) int {
@@ -20,20 +20,23 @@ func split(sum int)(x, y int) {
 	return
 }
 
+const (
+	Big = 1 << 100
+	Small = Big >> 99
+)
 
+func needInt(x int) int {
+	return x * 10 + 1
+}
+
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
 
 func main() {
-	var x, y int = 3, 4
-	var f float64 = math.Sqrt(float64(x * x + y * y))
-	var z uint = uint(f)
-	var d = uint(f)
-	var k = f
-	// var s int = f
-	fmt.Println(x, y, z, d, k)
-	var s = 3
-	var t = 3.0
-	fmt.Printf("%T, %v\n", s, s)
-	fmt.Printf("%T, %v\n", t, t)
+	fmt.Println(needInt(Small))
+	fmt.Println(needFloat(Small))
+	fmt.Println(needFloat(Big))
 }
 
 // go's basic types
@@ -53,4 +56,10 @@ func main() {
 	数字类型默认值为 0
 	布尔类型默认值为 false
 	字符串类型默认值为 ""
+*/
+
+/*
+	go 常量可以用关键字 const 来声明
+	常量可以是char, string, boolean, or 数字 格式的值
+	常量不可以用 := 来声明
 */
