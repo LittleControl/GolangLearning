@@ -13,9 +13,11 @@ func mySqrt(x float64) string {
 }
 
 func main() {
-	fmt.Println(mySqrt(2), mySqrt(-4))
-	if num0 := 9; num0 > 0 {
+	// fmt.Println(mySqrt(2), mySqrt(-4))
+	if num0 := 9; num0 < 0 {
 		fmt.Println(num0)
+	} else {
+		fmt.Println("else is here")
 	}
 }
 
