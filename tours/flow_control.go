@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math"
+	// "math"
+	"runtime"
+	"time"
 )
 
 // z -= (z*z - x) / (2*z)
@@ -16,8 +18,27 @@ func mySqrt(x float64) float64 {
 }
 
 func main() {
-	fmt.Println(mySqrt(2))
-	fmt.Println(math.Sqrt(2))
+	// fmt.Println(mySqrt(2))
+	// fmt.Println(math.Sqrt(2))
+	fmt.Println("Go runs on")
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X.")
+	case "linux":
+		fmt.Println("Linux.")
+	default:
+		fmt.Printf("%s. \n", os)
+	}
+	t := time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good Morning")
+	case t.Hour() < 17:
+		fmt.Println("Good Afternoon.")
+	default:
+		fmt.Println("Good Evening")
+	}
+
 }
 
 /*
@@ -29,4 +50,9 @@ func main() {
 
 /*
 if 和 else中条件中定义的变量,只能在自己的块范围内引用
+*/
+
+/*
+go 在switch里如果遇到符合条件的case会默认break
+case的值不能是一个constant的变量,值不是必须是int
 */
