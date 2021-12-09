@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	// "strings"
+)
 
 func main() {
 	// names := [4]string {
@@ -43,8 +46,27 @@ func main() {
 	// if s == nil {
 	// 	fmt.Println("nil!")
 	// }
-	a := make([]int)
-	fmt.Println(a)
+	// a := make([]int)
+	// fmt.Println(a)
+	// s_of_slice := [][]string {
+	// 	[]string{"", "o", ""},
+	// 	[]string{"o", "", "o"},
+	// 	[]string{"", "o", ""},
+	// }
+	// s_of_slice[0][0] = "X"
+	// s_of_slice[0][2] = "X"
+	// s_of_slice[1][1] = "X"
+	// s_of_slice[2][0] = "X"
+	// s_of_slice[2][2] = "X"
+	// for i := 0; i < len(s_of_slice); i++ {
+	// 	fmt.Printf("%s\n", strings.Join(s_of_slice[i], " "))
+	// }
+	var s []int
+	fmt.Println(s)
+	t := append(s, 1)
+	fmt.Println(t)
+	t = append(s, 2)
+	fmt.Println(t)
 }
 
 func printSlice(s []int) {
